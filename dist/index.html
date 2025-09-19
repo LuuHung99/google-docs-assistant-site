@@ -1,16 +1,68 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trang Chủ</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Cách chèn văn bản vào Google Docs — Hướng dẫn</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-    a { text-decoration: none; color: #007BFF; }
+    :root{
+      --primary:#2563eb; --muted:#64748b; --bg:#f8fafc; --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:Inter, "Segoe UI", Arial, sans-serif;
+      background:var(--bg); color:#0f172a;
+    }
+    header{background:var(--primary); color:#fff; padding:18px 20px; text-align:center}
+    header h1{margin:0;font-size:1.4rem}
+    main{max-width:900px;margin:28px auto;padding:0 16px}
+    .card{background:var(--card);padding:20px;border-radius:12px;
+          box-shadow:0 6px 18px rgba(2,6,23,0.06); margin-bottom:18px}
+    h2{color:var(--primary);margin:0 0 10px 0;font-size:1.05rem}
+    p{margin:0 0 12px 0;line-height:1.6}
+    pre{background:#f1f5f9;padding:14px;border-radius:8px;overflow:auto;font-size:0.95rem}
+    footer{max-width:900px;margin:8px auto 40px auto;text-align:center;color:var(--muted);font-size:0.9rem}
+    a{color:var(--primary);text-decoration:none}
+    .note{font-size:0.92rem;color:var(--muted);border-left:4px solid #e2e8f0;padding:10px 12px}
+    @media (max-width:520px){header h1{font-size:1.1rem}}
   </style>
 </head>
 <body>
-  <h1>Chào mừng bạn đến với trang web của tôi!</h1>
-  <p>Để biết thêm thông tin, xem <a href="privacy.html">Chính sách bảo mật</a>.</p>
+  <header>
+    <h1>Hướng dẫn: Chèn văn bản vào Google Docs</h1>
+  </header>
+
+  <main>
+    <article class="card">
+      <h2>Tổng quan</h2>
+      <p>Trang này trình bày cách chèn văn bản vào Google Docs theo hai hướng chính: dùng <strong>Google Apps Script</strong> (đúng & dễ dùng) hoặc dùng API/automation nâng cao. Một số cách can thiệp trực tiếp vào DOM của Google Docs <em>không hoạt động</em> vì Docs dùng lớp render đặc biệt.</p>
+    </article>
+
+    <article class="card">
+      <h2>Ví dụ: Google Apps Script (chạy trong Google Docs)</h2>
+      <p>Đoạn mã dưới đây chạy trong môi trường Apps Script liên kết với tài liệu Google Docs và thêm một đoạn văn bản:</p>
+      <pre><code>function insertText() {
+  const doc = DocumentApp.getActiveDocument();
+  const body = doc.getBody();
+  body.appendParagraph("Đây là đoạn text được thêm bằng Apps Script.");
+}</code></pre>
+      <p class="note">Lưu ý: script này chỉ chạy khi bạn có quyền truy cập vào tài liệu hoặc khi người dùng cho phép script chạy trên tài liệu đó.</p>
+    </article>
+
+    <article class="card">
+      <h2>Hướng dẫn nhanh</h2>
+      <ol style="margin:0 0 0 18px; padding:0 0 12px 0; line-height:1.6">
+        <li>Tạo Google Docs → Extensions → Apps Script.</li>
+        <li>Dán hàm vào, lưu và chạy (lần đầu sẽ yêu cầu ủy quyền).</li>
+        <li>Kiểm tra tài liệu: đoạn văn sẽ xuất hiện ở cuối body.</li>
+      </ol>
+    </article>
+
+    <article class="card">
+      <p>Xem thêm <a href="privacy.html">Chính sách & Thông tin</a></p>
+    </article>
+  </main>
+
+  <footer>© 2025 Google Docs Assistant Demo — Trang hướng dẫn kỹ thuật, không thu thập dữ liệu.</footer>
 </body>
 </html>

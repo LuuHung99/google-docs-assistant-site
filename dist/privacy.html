@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chính Sách Bảo Mật</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Chính Sách & Thông Tin</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 50px; max-width: 800px; margin: auto; }
-    a { text-decoration: none; color: #007BFF; }
+    :root{--primary:#2563eb;--muted:#64748b;--bg:#f8fafc}
+    body{margin:0;font-family:Inter, Arial, sans-serif;background:var(--bg);color:#0f172a}
+    header{background:var(--primary);color:#fff;padding:16px;text-align:center}
+    header h1{margin:0;font-size:1.25rem}
+    main{max-width:900px;margin:24px auto;padding:0 16px}
+    .card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+    h2{color:var(--primary);margin:0 0 10px 0}
+    p{margin:0 0 12px 0;line-height:1.6}
+    footer{max-width:900px;margin:12px auto 40px auto;text-align:center;color:var(--muted);font-size:0.9rem}
+    a{color:var(--primary);text-decoration:none}
   </style>
 </head>
 <body>
-  <h1>Chính Sách Bảo Mật</h1>
-  <p>Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn và không chia sẻ với bên thứ ba.</p>
-  <p>Quay lại <a href="index.html">trang chủ</a>.</p>
+  <header><h1>Chính Sách & Thông Tin</h1></header>
+
+  <main>
+    <section class="card">
+      <h2>Bảo mật</h2>
+      <p>Trang này chỉ là tư liệu hướng dẫn kỹ thuật (tệp HTML tĩnh). Chúng tôi <strong>không</strong> thu thập, lưu trữ hay gửi dữ liệu người dùng đến server nào.</p>
+
+      <h2>Về nội dung kỹ thuật</h2>
+      <p>Một số ví dụ trên trang là mã minh họa. Khi áp dụng trong môi trường thực tế (ví dụ: Apps Script hoặc API), bạn cần đảm bảo người dùng cấp quyền và tuân thủ các quy định của Google (OAuth, scope, quyền truy cập tài liệu).</p>
+
+      <h2>Liên hệ</h2>
+      <p>Quay lại <a href="index.html">Trang chính</a>.</p>
+    </section>
+  </main>
+
+  <footer>© 2025 Google Docs Assistant Demo</footer>
 </body>
 </html>
